@@ -21,7 +21,7 @@ if ! command -v docker &> /dev/null; then
     rm get-docker.sh
 fi
 
-INSTALLATION_PATH="/opt/myspeed-dockerized"
+INSTALLATION_PATH="/mnt/c/Github/myspeed"
 mkdir -p "$INSTALLATION_PATH"
 
 echo -e "${BLUE}Creating docker-compose.yml file...${NORMAL}"
@@ -29,13 +29,13 @@ cat << EOF > "$INSTALLATION_PATH/docker-compose.yml"
 version: '3'
 services:
   myspeed:
-    image: germannewsmaker/myspeed
+    image: ndsamuelson/myspeed:latest-nic
     ports:
-      - "5216:5216"
+      - "5218:5216"
     volumes:
-      - myspeed:/myspeed/data
+      - /mnt/c/Github/myspeed:/myspeed/data
     restart: unless-stopped
-    container_name: MySpeed
+    container_name: MySpeed-testing
 volumes:
   myspeed:
 EOF

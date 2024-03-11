@@ -1,6 +1,6 @@
 FROM node:21-alpine
-RUN apk add g++ make cmake python3 --no-cache
-
+RUN apk add g++ make cmake python3 libuv --no-cache
+RUN apk add libuv
 ENV NODE_ENV=production
 
 WORKDIR /myspeed

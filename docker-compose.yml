@@ -1,0 +1,12 @@
+version: '3'
+services:
+  myspeed:
+    image: ndsamuelson/myspeed:latest-nic
+    ports:
+      - "5218:5216"
+    volumes:
+      - /mnt/c/Github/myspeed:/myspeed/data
+    restart: unless-stopped
+    container_name: MySpeed-testing
+volumes:
+  myspeed:
