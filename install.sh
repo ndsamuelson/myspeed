@@ -128,7 +128,7 @@ then
     mkdir "$INSTALLATION_PATH"
 fi
 
-cd "$INSTALLATION_PATH"
+cd "$INSTALLATION_PATH" || exit
 
 clear
 echo -e "$BLUEℹ Info: $NORMAL The current MySpeed instance is being downloaded. Please wait..."
